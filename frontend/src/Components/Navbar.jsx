@@ -1,14 +1,15 @@
+import { useState } from "react";
 import logo from "../assets/Logo.svg";
-// import {FaBars, FaTimes} from "react-icons/fa"
-// import { useState } from "react";
-import { FaFacebook } from "react-icons/fa";
+import {
+  FaSearch,
+  FaUser,
+  FaShoppingCart,
+  FaFacebook,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
-
-// const ResNavBar = () => {
-//   const [menuOpen, setmenuOpen] = useState(false);
-// }
 
 const topBar = [
   {
@@ -32,6 +33,7 @@ const topBar = [
     path: "#",
   },
 ];
+
 const NavBar = [
   {
     id: 1,
@@ -61,25 +63,25 @@ const NavBar = [
 ];
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="w-full">
-      {/* Full-width bottom border */}
-      <div className="w-full border-b-2 hidden lg:flex">
+      {/* Top Bar (Hidden on small screens) */}
+      <div className="w-full border-b-2 hidden md:flex">
         <div className="container mx-auto flex justify-between font-thin py-1 px-4 text-md">
           {/* Top Links */}
-          <div>
-            <ul className="flex space-x-4">
-              {topBar.map((data) => (
-                <li key={data.id} className="transition-all duration-200">
-                  <a href={data.path}>{data.name}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="flex space-x-4">
+            {topBar.map((data) => (
+              <li key={data.id} className="transition-all duration-200">
+                <a href={data.path}>{data.name}</a>
+              </li>
+            ))}
+          </ul>
 
-          {/* Top Icons */}
+          {/* Social Icons */}
           <div className="flex space-x-4 cursor-pointer">
-            <a href="" className="pr-4 transition-all duration-200">
+            <a href="#" className="pr-4 transition-all duration-200">
               Track Your Order
             </a>
             <FaFacebook className="hover:text-[#0866FF] transition-all duration-200" />
@@ -93,35 +95,55 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center h-20 px-3">
         {/* Logo */}
         <div>
-          <img src={logo} alt="CHICHIFY" className="h-32" />
+          <img src={logo} alt="CHICHIFY" className="h-28" />
         </div>
 
-        {/* Navigation Links */}
-        <div>
-          <ul className="flex space-x-6">
-            {NavBar.map((data) => (
-              <li key={data.id} className="transition-all duration-200">
-                <a href={data.path}>{data.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Desktop Navigation Links */}
+        <ul className="hidden md:flex space-x-6">
+          {NavBar.map((data) => (
+            <li key={data.id} className="transition-all duration-200">
+              <a href={data.path}>{data.name}</a>
+            </li>
+          ))}
+        </ul>
 
-        {/* Icons */}
-        <div className="flex space-x-4">
+        {/* Icons & Mobile Menu Button */}
+        <div className="flex space-x-4 items-center text-2xl">
           <FaSearch />
           <FaUser />
           <FaShoppingCart />
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
         </div>
       </div>
-      {/* <div className="flex items-center space-x-4">
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-2xl"
-        >
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
-      </div> */}
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed top-0 right-0 w-2/3 h-full bg-white shadow-md transform ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out`}
+      >
+        {/* Close Button */}
+        <div className="flex justify-end p-4">
+          <button onClick={() => setMenuOpen(false)}>
+            <FaTimes size={24} />
+          </button>
+        </div>
+
+        {/* Mobile Navigation Links */}
+        <ul className="flex flex-col items-center space-y-6 mt-10">
+          {NavBar.map((data) => (
+            <li key={data.id} className="text-lg">
+              <a href={data.path} onClick={() => setMenuOpen(false)}>
+                {data.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
