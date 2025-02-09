@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const topBar = [
   {
@@ -38,27 +39,27 @@ const NavBar = [
   {
     id: 1,
     name: "Home",
-    path: "#",
+    path: "/", // Home page
   },
   {
     id: 2,
     name: "T-Shirts",
-    path: "#",
+    path: "/t-shirts", // Route for T-Shirts
   },
   {
     id: 3,
     name: "SweatShirts",
-    path: "#",
+    path: "/sweatshirts", // Route for SweatShirts
   },
   {
     id: 4,
     name: "Hoodies",
-    path: "#",
+    path: "/hoodies", // Route for Hoodies
   },
   {
     id: 5,
     name: "Kids",
-    path: "#",
+    path: "/kids", // Route for Kids
   },
 ];
 
@@ -95,14 +96,16 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center h-20 px-3">
         {/* Logo */}
         <div>
-          <img src={logo} alt="CHICHIFY" className="h-28" />
+          <Link to="/">
+            <img src={logo} alt="CHICHIFY" className="h-28" />
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-6">
           {NavBar.map((data) => (
             <li key={data.id} className="transition-all duration-200">
-              <a href={data.path}>{data.name}</a>
+              <Link to={data.path}>{data.name}</Link>
             </li>
           ))}
         </ul>
@@ -137,9 +140,9 @@ const Navbar = () => {
         <ul className="flex flex-col items-center space-y-6 mt-10">
           {NavBar.map((data) => (
             <li key={data.id} className="text-lg">
-              <a href={data.path} onClick={() => setMenuOpen(false)}>
+              <Link to={data.path} onClick={() => setMenuOpen(false)}>
                 {data.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
