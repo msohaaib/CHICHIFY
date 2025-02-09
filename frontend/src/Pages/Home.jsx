@@ -1,7 +1,11 @@
+import Carousel from "../Components/Carousel";
 const Home = () => {
   return (
     <div>
-      <div>Home</div>
+      <div>
+        <Carousel />
+      </div>
+      <div>lorem900</div>
     </div>
   );
 };
