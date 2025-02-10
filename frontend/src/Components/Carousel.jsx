@@ -49,7 +49,7 @@ const Carousel = () => {
                   <img
                     src={slide.image}
                     alt="Slide"
-                    className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] object-cover"
+                    className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] object-cover shadow-md"
                   />
                 </div>
                 {/* Content Section */}
