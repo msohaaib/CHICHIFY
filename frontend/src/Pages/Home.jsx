@@ -1,4 +1,8 @@
 import Carousel from "../Components/Carousel";
+import hoodie from "../assets/category/hoodie.jpg";
+import sweatshrit from "../assets/category/sweatshrit.avif";
+import tshirt from "../assets/category/tshirt.avif";
+import kid from "../assets/category/kid.avif";
 const Home = () => {
   return (
     <div>
@@ -12,9 +16,9 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* First row */}
-          <div className="relative">
+          <div className="relative h-3/4">
             <img
-              src="/images/backpack.jpg"
+              src={hoodie}
               alt="Backpack"
               className="w-full h-full object-cover rounded-lg"
             />
@@ -23,9 +27,9 @@ const Home = () => {
             </span>
           </div>
 
-          <div className="relative">
+          <div className="relative h-3/4">
             <img
-              src="/images/shoes.jpg"
+              src={sweatshrit}
               alt="Shoes"
               className="w-full h-full object-cover rounded-lg"
             />
@@ -34,9 +38,9 @@ const Home = () => {
             </span>
           </div>
 
-          <div className="relative row-span-2">
+          <div className="relative row-span-2 h-2/3">
             <img
-              src="/images/hats.jpg"
+              src={tshirt}
               alt="Hats"
               className="w-full h-full object-cover rounded-lg"
             />
@@ -46,9 +50,9 @@ const Home = () => {
           </div>
 
           {/* Second row */}
-          <div className="relative col-span-2">
+          <div className="relative col-span-2 h-1/2">
             <img
-              src="/images/glasses.jpg"
+              src={kid}
               alt="Glasses"
               className="w-full h-full object-cover rounded-lg"
             />
