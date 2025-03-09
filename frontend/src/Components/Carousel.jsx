@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img1 from "../assets/Carousel/img1.png";
 import img2 from "../assets/Carousel/img2.png";
-import { NextArrow, PrevArrow } from "./Arrow";
+// import { NextArrow, PrevArrow } from "./Arrow";
 
 const Carousel = () => {
   const settings = {
@@ -15,8 +15,8 @@ const Carousel = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
   };
 
   const slides = [
@@ -67,7 +67,7 @@ const Carousel = () => {
                     Limited-time offers on our best-selling products. Grab yours
                     now!
                   </p>
-                  <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+                  <button className="bg-slate-800 text-white py-2 px-4 rounded-lg hover:bg-black transition">
                     Shop Now
                   </button>
                 </div>
