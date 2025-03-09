@@ -5,6 +5,7 @@ import Kids from "./Pages/Kids";
 import SweatShirts from "./Pages/SweatShirt";
 import TShirts from "./Pages/TShirts";
 import Navbar from "./Components/Navbar";
+import ProductDetail from "./Pages/ProductDetail";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/sweatshirts" element={<SweatShirts />} />
         <Route path="/hoodies" element={<Hoodies />} />
         <Route path="/kids" element={<Kids />} />
+        <Route path="/ProductDetail" element={<ProductDetail />} />
       </Routes>
     </>
   );
