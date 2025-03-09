@@ -1,24 +1,41 @@
-# Logs
-logs
-*.log
+# 🚀 Node.js dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 🔐 Environment Variables (API keys, database credentials)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# 📦 Build & Output Files
+dist/
+build/
+.cache/
+out/
+
+# 🖼️ Static Files (optional)
+.DS_Store
+Thumbs.db
+
+# 📜 Logs & Debugging
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+*.log
+logs/
+*.log.*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ⚙️ Editor & OS Files
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# 🚀 Deployment Configs (optional)
+.firebase/
+.netlify/
+.vercel/
