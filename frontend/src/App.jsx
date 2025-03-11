@@ -6,7 +6,7 @@ import SweatShirts from "./Pages/SweatShirt";
 import TShirts from "./Pages/TShirts";
 import Navbar from "./Components/Navbar";
 import ProductDetail from "./Pages/ProductDetail";
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/kids" element={<Kids />} />
         <Route path="/ProductDetail" element={<ProductDetail />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

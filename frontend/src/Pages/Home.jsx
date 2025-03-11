@@ -76,7 +76,7 @@ const Home = () => {
       </div>
 
       {/* 🔹 Features */}
-      <section className="bg-slate-100 py-12 mt-16">
+      <section className="bg-slate-50 py-16">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-center text-3xl font-semibold mb-10">
             Why Shop With Us?
@@ -105,7 +105,7 @@ const Home = () => {
 
                 {/* Divider (Except Last Item) */}
                 {index !== features.length - 1 && (
-                  <div className="hidden lg:block absolute right-0 top-1/2 h-3/4 border-r border-gray-300"></div>
+                  <div className="hidden lg:block absolute -right-[14px] h-3/4 border-r border-gray-300"></div>
                 )}
               </div>
             ))}
@@ -120,7 +120,4 @@ export default Home;
 
 {
   /* <Breadcrumbs /> */
-}
-{
-  /* 🔹 New Arrivals */
 }

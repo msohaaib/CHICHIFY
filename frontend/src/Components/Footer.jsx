@@ -1,117 +1,92 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
+  const informationLinks = [
+    { id: 1, name: "About Us", path: "#" },
+    { id: 2, name: "Contact Us", path: "#" },
+    { id: 3, name: "Privacy", path: "#" },
+    { id: 4, name: "FAQs", path: "#" },
+  ];
+
+  const navigateLinks = [
+    { id: 1, name: "Home", path: "/" },
+    { id: 2, name: "T-Shirts", path: "/t-shirts" },
+    { id: 3, name: "SweatShirts", path: "/sweatshirts" },
+    { id: 4, name: "Hoodies", path: "/hoodies" },
+    { id: 5, name: "Kids", path: "/kids" },
+  ];
+
+  const socialLinks = ["facebook", "twitter", "pinterest", "youtube"];
+
   return (
     <footer className="bg-gray-100 py-10">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Brand & Social Links */}
-        <div>
-          <h2 className="text-xl font-semibold">haute</h2>
-          <p className="text-gray-600 mt-2">
-            Our mission is to offer you the best selection of Nordic design,
-            whether well-established or up-and-coming.
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Logo Section */}
+        <div className="flex flex-col items-center md:items-start">
+          <Link to="/" className="flex items-center space-x-2">
+            {/* Logo will be uploaded here */}
+            <span className="text-xl font-semibold text-gray-900">
+              BrandName
+            </span>
+          </Link>
+          <p className="text-sm text-gray-500 mt-2">
+            Your tagline or description here.
           </p>
-          <div className="flex space-x-4 mt-4 text-gray-600">
-            <a href="#" className="hover:text-black">
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#" className="hover:text-black">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="hover:text-black">
-              <i className="fab fa-pinterest"></i>
-            </a>
-            <a href="#" className="hover:text-black">
-              <i className="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-
-        {/* Navigation Links */}
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Navigate</h3>
-          <ul className="space-y-2 text-gray-600">
-            <li>
-              <a href="#" className="hover:text-black">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                Catalog
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                Journal
-              </a>
-            </li>
-          </ul>
         </div>
 
         {/* Information Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Informations</h3>
-          <ul className="space-y-2 text-gray-600">
-            <li>
-              <a href="#" className="hover:text-black">
-                Delivery
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                Return Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                Store Locations
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-black">
-                FAQs
-              </a>
-            </li>
+          <h2 className="text-sm font-medium text-gray-900 mb-3">
+            INFORMATION
+          </h2>
+          <ul className="space-y-2">
+            {informationLinks.map((link) => (
+              <li key={link.id}>
+                <Link
+                  to={link.path}
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Newsletter */}
+        {/* Navigation Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Newsletter</h3>
-          <p className="text-gray-600 mb-3">
-            Subscribe to get notified about product launches, special offers,
-            and news.
-          </p>
-          <div className="flex">
-            <input
-              type="email"
-              placeholder="hi@haute.woostify"
-              className="w-full px-3 py-2 border rounded-l-md focus:outline-none"
-            />
-            <button className="bg-orange-500 text-white px-4 py-2 rounded-r-md hover:bg-orange-600">
-              SUBSCRIBE
-            </button>
-          </div>
+          <h2 className="text-sm font-medium text-gray-900 mb-3">NAVIGATE</h2>
+          <ul className="space-y-2">
+            {navigateLinks.map((link) => (
+              <li key={link.id}>
+                <Link
+                  to={link.path}
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      {/* Bottom Text */}
-      <div className="text-center text-gray-500 text-sm mt-8">
-        © 2021 Haute. Developed by Woostify.
+      {/* Social Links */}
+      <div className="border-t border-gray-300 mt-6 pt-4 text-center flex flex-col md:flex-row justify-between items-center">
+        <p className="text-sm text-gray-500">
+          © {new Date().getFullYear()} BrandName. All rights reserved.
+        </p>
+        <div className="mt-3 flex justify-center space-x-4">
+          {socialLinks.map((platform) => (
+            <a
+              key={platform}
+              href="#"
+              className="text-gray-500 hover:text-gray-800"
+            >
+              {platform.charAt(0).toUpperCase() + platform.slice(1)}
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );
