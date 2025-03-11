@@ -222,4 +222,27 @@ const CategoryProducts = [
 
 const categories = ["Hoodie", "T-Shirt", "Sweat Shirt", "Baby"];
 
-export { products, categories, CategoryProducts }; // Fixed export
+const features = [
+  {
+    icon: "🚚",
+    title: "Fast & Free Delivery",
+    description: "Free delivery on all orders",
+  },
+  {
+    icon: "💳",
+    title: "Secure Payment",
+    description: "Safe and reliable transactions",
+  },
+  {
+    icon: "💰",
+    title: "Money Back Guarantee",
+    description: "Hassle-free refunds",
+  },
+  {
+    icon: "🛠️",
+    title: "Online Support",
+    description: "24/7 customer assistance",
+  },
+];
+
+export { products, categories, CategoryProducts, features }; // Fixed export
