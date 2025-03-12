@@ -26,12 +26,10 @@ const Footer = () => {
           <Link to="/" className="flex items-center space-x-2">
             {/* Logo will be uploaded here */}
             <span className="text-xl font-semibold text-gray-900">
-              BrandName
+              CHIHCIFY
             </span>
           </Link>
-          <p className="text-sm text-gray-500 mt-2">
-            Your tagline or description here.
-          </p>
+          <p className="text-sm text-gray-500 mt-2">VIBE WITH CHICHIFY</p>
         </div>
 
         {/* Information Links */}
@@ -74,7 +72,7 @@ const Footer = () => {
       {/* Social Links */}
       <div className="border-t border-gray-300 mt-6 pt-4 text-center flex flex-col md:flex-row justify-between items-center">
         <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} BrandName. All rights reserved.
+          © {new Date().getFullYear()} CHICHIFY. All rights reserved.
         </p>
         <div className="mt-3 flex justify-center space-x-4">
           {socialLinks.map((platform) => (
